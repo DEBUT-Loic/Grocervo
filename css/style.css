@@ -1,0 +1,159 @@
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+@keyframes wheelHueColor {
+    from, to { color: hsl(180, 65%, 45%); }
+    10%      { color: hsl(360, 65%, 45%); }
+    20%      { color: hsl( 36, 80%, 45%); }
+    30%      { color: hsl( 72, 75%, 35%); }
+    40%      { color: hsl(108, 65%, 35%); }
+    50%      { color: hsl(144, 75%, 35%); }
+    60%      { color: hsl(180, 75%, 35%); }
+    70%      { color: hsl(216, 60%, 45%); }
+    80%      { color: hsl(252, 65%, 50%); }
+    90%      { color: hsl(288, 60%, 40%); }
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body {
+	text-align: center;
+	height: 100vh;
+	overflow: hidden;
+    /* color: hsl(224, 99%, 35%); */
+    /* Teste background anim */
+    color:hsl(180, 50%, 50%);
+    /* animation: wheelHueColor 100s infinite; */
+    background-color: currentColor;
+}
+@supports (background-blend-mode: overlay) {
+    body {
+        background-image: radial-gradient(white, black);
+        background-size: 300% 300%;
+        animation: gradient 10s ease infinite;
+        background-blend-mode: overlay;
+    }
+}
+
+main {
+    text-align: center;
+}
+main * {
+    margin: auto;
+}
+#tableau-jeu {
+    position: relative;
+}
+
+table * {
+    width: 30px;
+    height: 30px;
+    color: black;
+}
+#tableau,.mal-place,.bien-place,#reponse {
+    width: 200px;
+}
+#tableau {
+    background: #18232c;
+    border-collapse: collapse;
+}
+#tableau div {
+    background: black;
+    border: 1px solid black;
+    border-radius: 50px;
+}
+.parentC > *, #tableau div, #reponse table div {
+    margin: 5px;
+    border-radius: 50px;
+}
+#tableau div, #reponse table div {
+    margin: 5px auto;
+}
+.parentC > * {
+    border: 1px solid black;
+}
+
+/* Indication */
+.mal-place, .bien-place {
+    position: absolute;
+    left: 50%;
+    top: 0;
+    transform: translateX(-50%);
+    z-index: -1;
+    border-collapse: collapse;
+}
+.mal-place tr, .bien-place tr {
+    height: 40px;
+    position: relative;
+}
+.mal-place tr {
+    /* left: 80px; */
+    background: orange;
+}
+.bien-place tr {
+    /* right: 80px; */
+    background: #19e519;
+}
+
+.bien-place td:nth-child(even) {
+    background: #65f065;
+}
+.mal-place td:nth-child(odd) {
+    background: #f5c263;
+}
+
+/* Réponse */
+#reponse table {
+    border-collapse: collapse;
+}
+#reponse table td {
+    margin: auto;
+}
+#reponse table td:not(:last-child) {
+    padding-right: 10px;
+}
+#reponse table div {
+    border: 1px solid black;
+}
+
+/* Couleur choix */
+#color1 {
+    background: #ff0000;
+}
+#color2 {
+    background: #0000ff;
+}
+#color3 {
+    background: #00ff00;
+}
+#color4 {
+    background: #ffff00;
+}
+#color5 {
+    background: #ffa500;
+}
+#color6 {
+    background: fuchsia;
+}
+#color7 {
+    background: #7711e4;
+}
+#color8 {
+    background: #808080;
+}
+
+/* ligne actuelle */
+.actuelle {
+    background: #ffff9e;
+}

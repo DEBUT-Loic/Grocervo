@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Mastermind</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+    <script src="script/jeu.js" defer></script>
+</head>
+<body>
+  
+    <main>
+        <article id="reponse">
+            <table id="answer3">
+                <tr>
+                    <td><div class="rep1"></div></td>
+                    <td><div class="rep2"></div></td>
+                    <td><div class="rep3"></div></td>
+                    <td><div class="rep4"></div></td>
+                    <td><div class="rep5"></div></td>
+                </tr>
+            </table>
+
+            <table id="answer2">
+                <tr>
+                    <td><div class="rep1"></div></td>
+                    <td><div class="rep2"></div></td>
+                    <td><div class="rep3"></div></td>
+                    <td><div class="rep4"></div></td>
+                </tr>
+            </table>
+
+            <table id="answer1">
+                <tr>
+                    <td><div class="rep1"></div></td>
+                    <td><div class="rep2"></div></td>
+                    <td><div class="rep3"></div></td>
+                </tr>
+            </table>
+        </article>
+        
+        <article id="tableau-jeu">
+            <table class="mal-place">
+                <tr>
+                    <!-- <td>4</td> -->
+                    <td>3</td>
+                    <td>2</td>
+                    <td>1</td>
+                </tr>
+                <tr>
+                    <!-- <td>4</td> -->
+                    <td>3</td>
+                    <td>2</td>
+                    <td>1</td>
+                </tr>
+                <tr>
+                    <!-- <td>4</td> -->
+                    <td>3</td>
+                    <td>2</td>
+                    <td>1</td>
+                </tr>
+                <tr>
+                    <!-- <td>4</td> -->
+                    <td>3</td>
+                    <td>2</td>
+                    <td>1</td>
+                </tr>
+                <tr>
+                    <!-- <td>4</td> -->
+                    <td>3</td>
+                    <td>2</td>
+                    <td>1</td>
+                </tr>
+                <tr>
+                    <!-- <td>4</td> -->
+                    <td>3</td>
+                    <td>2</td>
+                    <td>1</td>
+                </tr>
+                <tr>
+                    <!-- <td>4</td> -->
+                    <td>3</td>
+                    <td>2</td>
+                    <td>1</td>
+                </tr>
+                <tr>
+                    <!-- <td>4</td> -->
+                    <td>3</td>
+                    <td>2</td>
+                    <td>1</td>
+                </tr>
+                <tr>
+                    <!-- <td>4</td> -->
+                    <td>3</td>
+                    <td>2</td>
+                    <td>1</td>
+                </tr>
+                <tr>
+                    <!-- <td>4</td> -->
+                    <td>3</td>
+                    <td>2</td>
+                    <td>1</td>
+                </tr>
+            </table>
+
+            <table id="tableau">
+                <tr id="row1">
+                    <td><div class="case1"></div></td>
+                    <td><div class="case2"></div></td>
+                    <td><div class="case3"></div></td>
+                    <!-- <td><div class="case4"></div></td> -->
+                </tr>
+                <tr id="row2">
+                    <td><div class="case1"></div></td>
+                    <td><div class="case2"></div></td>
+                    <td><div class="case3"></div></td>
+                    <!-- <td><div class="case4"></div></td> -->
+                </tr>
+                <tr id="row3">
+                    <td><div class="case1"></div></td>
+                    <td><div class="case2"></div></td>
+                    <td><div class="case3"></div></td>
+                    <!-- <td><div class="case4"></div></td> -->
+                </tr>
+                <tr id="row4">
+                    <td><div class="case1"></div></td>
+                    <td><div class="case2"></div></td>
+                    <td><div class="case3"></div></td>
+                    <!-- <td><div class="case4"></div></td> -->
+                </tr>
+                <tr id="row5">
+                    <td><div class="case1"></div></td>
+                    <td><div class="case2"></div></td>
+                    <td><div class="case3"></div></td>
+                    <!-- <td><div class="case4"></div></td> -->
+                </tr>
+                <tr id="row6">
+                    <td><div class="case1"></div></td>
+                    <td><div class="case2"></div></td>
+                    <td><div class="case3"></div></td>
+                    <!-- <td><div class="case4"></div></td> -->
+                </tr>
+                <tr id="row7">
+                    <td><div class="case1"></div></td>
+                    <td><div class="case2"></div></td>
+                    <td><div class="case3"></div></td>
+                    <!-- <td><div class="case4"></div></td> -->
+                </tr>
+                <tr id="row8">
+                    <td><div class="case1"></div></td>
+                    <td><div class="case2"></div></td>
+                    <td><div class="case3"></div></td>
+                    <!-- <td><div class="case4"></div></td> -->
+                </tr>
+                <tr id="row9">
+                    <td><div class="case1"></div></td>
+                    <td><div class="case2"></div></td>
+                    <td><div class="case3"></div></td>
+                    <!-- <td><div class="case4"></div></td> -->
+                </tr>
+                <tr id="row10">
+                    <td><div class="case1"></div></td>
+                    <td><div class="case2"></div></td>
+                    <td><div class="case3"></div></td>
+                    <!-- <td><div class="case4"></div></td> -->
+                </tr>
+            </table>
+
+            <table class="bien-place">
+                <tr>
+                    <td>1</td>
+                    <td>2</td>
+                    <td>3</td>
+                    <!-- <td>4</td> -->
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>2</td>
+                    <td>3</td>
+                    <!-- <td>4</td> -->
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>2</td>
+                    <td>3</td>
+                    <!-- <td>4</td> -->
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>2</td>
+                    <td>3</td>
+                    <!-- <td>4</td> -->
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>2</td>
+                    <td>3</td>
+                    <!-- <td>4</td> -->
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>2</td>
+                    <td>3</td>
+                    <!-- <td>4</td> -->
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>2</td>
+                    <td>3</td>
+                    <!-- <td>4</td> -->
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>2</td>
+                    <td>3</td>
+                    <!-- <td>4</td> -->
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>2</td>
+                    <td>3</td>
+                    <!-- <td>4</td> -->
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>2</td>
+                    <td>3</td>
+                    <!-- <td>4</td> -->
+                </tr>
+            </table>
+        </article>
+
+        <table id="choix">
+            <tr>
+                <td class="parentC"><div id="color1"></div></td>
+                <td class="parentC"><div id="color2"></div></td>
+                <td class="parentC"><div id="color3"></div></td>
+                <td class="parentC"><div id="color4"></div></td>
+                <td class="parentC"><div id="color5"></div></td>
+                <td class="parentC"><div id="color6"></div></td>
+                <td class="parentC"><div id="color7"></div></td>
+                <td class="parentC"><div id="color8"></div></td>
+            </tr>
+        </table>
+
+        <button id="btnVerif">Check</button>
+    </main>
+
+</body>
+</html>
