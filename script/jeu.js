@@ -69,8 +69,10 @@ $("#btnVerif").click(function() {
             } 
         }
     })
-
+    $(this).attr("disabled","disabled");
     if(!manquer) {
+        
+
         $(`.mal-place tr:nth-child(${idLigne})`).animate({left:`+=${malP * ($("#tableau").width()/$("#tableau #row1 td").length)}px`});
         $(`.bien-place tr:nth-child(${idLigne})`).animate({right:`+=${bienP * ($("#tableau").width()/$("#tableau #row1 td").length)}px`});
         if((bienP==$("#tableau #row1 td").length || (idLigne<=1 && bienP<$("#tableau #row1 td").length))) {
@@ -96,8 +98,8 @@ $("#btnVerif").click(function() {
     
                         for(let i=1;i<=$("#tableau tr").length;i++) {
                             $(`#tableau #row${i}`).append("<td><div class='case"+($("#tableau #row1 td").length)+"'></div></td>");
-                            $(".bien-place tr").eq(i).append(`<td>${$("#tableau #row1 td").length}</td>`);
-                            $(".mal-place tr").eq(i).prepend(`<td>${$("#tableau #row1 td").length}</td>`);
+                            $(".bien-place tr").eq(i-1).append(`<td>${$("#tableau #row1 td").length}</td>`);
+                            $(".mal-place tr").eq(i-1).prepend(`<td>${$("#tableau #row1 td").length}</td>`);
                         }
 
                         $(`#row${idLigne}`).removeClass("actuelle");
@@ -108,29 +110,28 @@ $("#btnVerif").click(function() {
     
                         $("#tableau-jeu").animate({width:["toggle", "swing"]});
                     });
-
                 }
                 else {
                     $("#tableau-jeu").animate({width:["toggle", "swing"]},"normal","linear",function() {
                         $("body").animate({color:"hsl(46, 65%, 52%)"});
                     });
                     $("#choix").animate({width:["toggle", "swing"]});
+                    $("#btnVerif").animate({width:["toggle", "swing"]});
                 }
-                
-                console.log(cpt)
+                $("#btnVerif").removeAttr("disabled");
             },700)
         }
         else {
             setTimeout(function() {
                 $(`#row${idLigne}`).removeClass("actuelle");
                 idLigne--;
-                $(`#row${idLigne}`).addClass("actuelle"); 
+                $(`#row${idLigne}`).addClass("actuelle");
+                $("#btnVerif").removeAttr("disabled");
             },700);
-            
         }  
     }
     else {
         alert("complétez la ligne");
+        $("#btnVerif").removeAttr("disabled");
     }
-
 });
